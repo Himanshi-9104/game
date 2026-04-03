@@ -1,0 +1,104 @@
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    background: linear-gradient(145deg, #f7f8fc, #e5e8f5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: min(420px, 90vw);
+    text-align: center;
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(39, 62, 93, 0.12);
+    border: 1px solid rgba(115, 131, 170, 0.22);
+}
+
+h1 {
+    color: #111c36;
+    margin-bottom: 16px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 16px auto;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f6f9ff;
+    border: 2px solid #ccd4e8;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1f3057;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cell:hover {
+    transform: translateY(-2px);
+    background-color: #e8eeff;
+    border-color: #6a86d6;
+}
+
+.status {
+    font-size: 18px;
+    margin: 16px 0;
+    color: #445073;
+    min-height: 24px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.status.win {
+    color: #117a3b;
+}
+
+.status.draw {
+    color: #138b17;
+}
+
+.status.turn {
+    color: #2c4f7b;
+}
+
+.win-cell {
+    animation: winPulse 0.7s ease-in-out forwards;
+    background-color: #b5ffae !important;
+    border-color: #09ff00 !important;
+    box-shadow: 0 0 18px rgba(0, 255, 85, 0.7);
+}
+
+@keyframes winPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+button {
+    background-color: #1b65db;
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 6px 12px rgba(27, 101, 219, 0.25);
+}
+
+button:hover {
+    background-color: #1450ab;
+    box-shadow: 0 8px 14px rgba(20, 80, 171, 0.35);
+}
